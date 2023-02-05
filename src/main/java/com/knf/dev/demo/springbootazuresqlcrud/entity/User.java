@@ -21,6 +21,39 @@ public class User {
 	@Column(name = "email", nullable = false, length = 200)
 	private String email;
 
+	@Column(name = "password")
+	private String password;
+
+	@Column(name = "user_id")
+	private String user_id;
+	
+	@Column(name = "last_update")
+	private String last_update;
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUser_id() {
+		return this.user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getLast_update() {
+		return this.last_update;
+	}
+
+	public void setLast_update(String last_update) {
+		this.last_update = last_update;
+	}
+
 	public User() {
 		super();
 	}
@@ -57,10 +90,13 @@ public class User {
 		this.email = email;
 	}
 
-	public User(String firstName, String lastName, String email) {
+	public User(String firstName, String lastName, String email,String password, String user_id,String last_update) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.password=password;
+		this.user_id = user_id;
+		this.last_update=last_update;
 	}
 }

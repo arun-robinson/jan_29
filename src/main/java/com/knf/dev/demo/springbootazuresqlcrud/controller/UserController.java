@@ -31,7 +31,8 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<User> createUser(@RequestBody User user) {
 
-		User newuser = new User(user.getFirstName(), user.getLastName(), user.getEmail());
+		User newuser = new User(user.getFirstName(), user.getLastName(), user.getEmail(),user.getPassword(),
+		user.getUser_id(),user.getLast_update());
 		userRepository.save(newuser);
 		return new ResponseEntity<>(newuser, HttpStatus.CREATED);
 
@@ -47,6 +48,10 @@ public class UserController {
 			_user.setEmail(user.getEmail());
 			_user.setFirstName(user.getFirstName());
 			_user.setLastName(user.getLastName());
+			_user.setPassword(user.getPassword());
+			_user.setUser_id(user.getUser_id());
+			_user.setLast_update(user.getUser_id());
+
 			return new ResponseEntity<>(userRepository.save(_user), HttpStatus.OK);
 		} else {
 			throw new UserNotFound("Invalid User Id");
