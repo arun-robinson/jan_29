@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.knf.dev.demo.springbootazuresqlcrud.SpringBootAzureSqlCrudApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.63 s - in com.knf.dev.demo.springbootazuresqlcrud.SpringBootAzureSqlCrudApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.084 s - in com.knf.dev.demo.springbootazuresqlcrud.SpringBootAzureSqlCrudApplicationTests
