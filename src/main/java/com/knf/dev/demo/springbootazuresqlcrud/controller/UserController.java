@@ -79,7 +79,7 @@ public class UserController {
 			_user.setLastName(user.getLastName());
 			_user.setPassword(user.getPassword());
 			_user.setUser_id(user.getUser_id());
-			_user.setLast_update(user.getUser_id());
+			_user.setLast_update(user.getLast_update());
 
 			return new ResponseEntity<>(userRepository.save(_user), HttpStatus.OK);
 		} else {

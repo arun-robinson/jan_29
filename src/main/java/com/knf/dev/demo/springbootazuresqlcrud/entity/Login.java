@@ -1,6 +1,6 @@
 package com.knf.dev.demo.springbootazuresqlcrud.entity;
 
-import org.yaml.snakeyaml.error.YAMLException;
+ 
 
 public class Login {
 
