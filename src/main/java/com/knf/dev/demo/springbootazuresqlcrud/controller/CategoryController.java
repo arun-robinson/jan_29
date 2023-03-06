@@ -27,7 +27,7 @@ public class CategoryController {
 	CategoryRepository categoryRepository;
 
     
-    // Create expense
+    // Create category
 	@PostMapping
 	public ResponseEntity<Category> createProduct(@RequestBody Category category) {
 
