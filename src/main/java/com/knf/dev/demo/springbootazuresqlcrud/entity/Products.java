@@ -38,15 +38,81 @@ public class Products {
     @Column(name = "updated")
     private Date updated;
 
-    @Column(name = "attribute1")
-    private String attribute1;
+    @Column(name = "production_date")
+    private Date production_date;
+
+    @Column(name = "product_group")
+    private String product_group;
+
+    @Column(name = "product_name")
+    private String product_name;
+
+    @Column(name = "product_serial")
+    private String product_serial;
+
+    @Column(name = "no_of_cartons_received")
+    private int no_of_cartons_received;
+
+    @Column(name = "product_key")
+    private String product_key;
+
+    public Date getProduction_date() {
+        return this.production_date;
+    }
+
+    public void setProduction_date(Date production_date) {
+        this.production_date = production_date;
+    }
 
     
-    @Column(name = "attribute2")
-    private String attribute2;
 
-    @Column(name = "attribute3")
-    private String attribute3;
+    public String getProduct_group() {
+        return this.product_group;
+    }
+
+    public void setProduct_group(String product_group) {
+        this.product_group = product_group;
+    }
+
+   
+    public String getProduct_name() {
+        return this.product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+     
+
+    public String getProduct_serial() {
+        return this.product_serial;
+    }
+
+    public void setProduct_serial(String product_serial) {
+        this.product_serial = product_serial;
+    }
+
+    
+
+    public int getNo_of_cartons_received() {
+        return this.no_of_cartons_received;
+    }
+
+    public void setNo_of_cartons_received(int no_of_cartons_received) {
+        this.no_of_cartons_received = no_of_cartons_received;
+    }
+
+    
+
+    public String getProduct_key() {
+        return this.product_key;
+    }
+
+    public void setProduct_key(String product_key) {
+        this.product_key = product_key;
+    }
+    
 
     public Long getProduct_id() {
         return this.product_id;
@@ -104,30 +170,14 @@ public class Products {
         this.updated = updated;
     }
 
-    public String getAttribute1() {
-        return this.attribute1;
-    }
+    
 
-    public void setAttribute1(String attribute1) {
-        this.attribute1 = attribute1;
-    }
+     
+      
 
-    public String getAttribute2() {
-        return this.attribute2;
-    }
+     
 
-    public void setAttribute2(String attribute2) {
-        this.attribute2 = attribute2;
-    }
-
-    public String getAttribute3() {
-        return this.attribute3;
-    }
-
-    public void setAttribute3(String attribute3) {
-        this.attribute3 = attribute3;
-    }
-
+     
 
 
     public Products() {
@@ -136,23 +186,35 @@ public class Products {
 
     
 	
-    public Products( String product_code,  String description,
+    public Products(
+
+     String product_code,  
+     String description,
      int rem_days,
      int rem_months,
      Date created,
      Date updated,
-     String attribute1,
-     String attribute2,
-     String attribute3) {
+     Date production_date,
+     String product_group,
+     String product_name,
+     String product_serial,
+     int no_of_cartons_received,
+     String product_key
+
+     ) {
 		super();
 		this.product_code = product_code;
 		this.description = description;
 		this.rem_months = rem_months;
 		this.created=created;
 		this.updated = updated;
-		this.attribute1=attribute1;
-        this.attribute2=attribute2;
-        this.attribute3=attribute3;
+		this.production_date=production_date;
+        this.product_group=product_group;
+        this.product_name=product_name;
+        this.product_serial = product_serial;
+        this.no_of_cartons_received=no_of_cartons_received;
+        this.product_key = product_key;
+
 	}
 
 

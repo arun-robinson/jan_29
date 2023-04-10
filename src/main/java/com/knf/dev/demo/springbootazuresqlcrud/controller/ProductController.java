@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.event.spi.PreDeleteEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,15 +35,34 @@ public class ProductController {
 	@PostMapping
 	public ResponseEntity<Products> createProduct(@RequestBody Products product) {
 
-		Products newproduct = new Products(product.getProduct_code(),
-         product.getDescription(), 
-         product.getRem_days(),
-          product.getRem_months(),
+		Products newproduct = new Products(
+		product.getProduct_code(),
+        product.getDescription(), 
+        product.getRem_days(),
+        product.getRem_months(),
         product.getCreated(), 
         product.getUpdated(),
-        product.getAttribute1(),
-        product.getAttribute2(),
-        product.getAttribute3()
+		product.getProduction_date(),
+		product.getProduct_group(),
+		product.getProduct_name(),
+		product.getProduct_serial(),
+		product.getNo_of_cartons_received(),
+		product.getProduct_key()
+
+
+		/*String product_code,  
+		String description,
+		int rem_days,
+		int rem_months,
+		Date created,
+		Date updated,
+		Date production_date,
+		String product_group,
+		String product_name,
+		String product_serial,
+		int no_of_cartons_received,
+		String product_key*/
+        
         );
 		productsRepository.save(newproduct);
 		return new ResponseEntity<>(newproduct, HttpStatus.CREATED);
@@ -63,9 +83,7 @@ public class ProductController {
 			product.setRem_months(prd.getRem_months());
 			product.setUpdated(prd.getUpdated());
 			product.setCreated(prd.getCreated());
-            product.setAttribute1(prd.getAttribute1());
-            product.setAttribute2(prd.getAttribute2());
-            product.setAttribute3(prd.getAttribute3());
+          
 
 
 			return new ResponseEntity<>(productsRepository.save(product), HttpStatus.OK);
