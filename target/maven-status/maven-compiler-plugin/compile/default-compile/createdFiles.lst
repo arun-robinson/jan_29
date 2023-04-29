@@ -1,8 +1,11 @@
 com\knf\dev\demo\springbootazuresqlcrud\controller\UserController.class
+com\knf\dev\demo\springbootazuresqlcrud\entity\MasterProducts.class
 com\knf\dev\demo\springbootazuresqlcrud\controller\ProductController.class
 com\knf\dev\demo\springbootazuresqlcrud\exception\GlobalExceptionHandler.class
 com\knf\dev\demo\springbootazuresqlcrud\controller\CategoryController.class
+com\knf\dev\demo\springbootazuresqlcrud\controller\StockController.class
 com\knf\dev\demo\springbootazuresqlcrud\entity\Products.class
+com\knf\dev\demo\springbootazuresqlcrud\repository\MasterProductsRepository.class
 com\knf\dev\demo\springbootazuresqlcrud\repository\CategoryRepository.class
 com\knf\dev\demo\springbootazuresqlcrud\exception\UserNotFound.class
 com\knf\dev\demo\springbootazuresqlcrud\controller\ExpenseController.class
@@ -10,8 +13,11 @@ com\knf\dev\demo\springbootazuresqlcrud\repository\ProductsRepository.class
 com\knf\dev\demo\springbootazuresqlcrud\entity\Expense.class
 com\knf\dev\demo\springbootazuresqlcrud\exception\ErrorMessage.class
 com\knf\dev\demo\springbootazuresqlcrud\repository\UserRepository.class
+com\knf\dev\demo\springbootazuresqlcrud\controller\MasterProductController.class
+com\knf\dev\demo\springbootazuresqlcrud\entity\Stock.class
 com\knf\dev\demo\springbootazuresqlcrud\entity\User.class
 com\knf\dev\demo\springbootazuresqlcrud\entity\Category.class
+com\knf\dev\demo\springbootazuresqlcrud\repository\StockRepository.class
 com\knf\dev\demo\springbootazuresqlcrud\Application.class
 com\knf\dev\demo\springbootazuresqlcrud\repository\ExpenseRepository.class
 com\knf\dev\demo\springbootazuresqlcrud\entity\Login.class
