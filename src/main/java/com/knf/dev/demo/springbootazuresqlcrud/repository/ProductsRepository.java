@@ -1,5 +1,4 @@
 package com.knf.dev.demo.springbootazuresqlcrud.repository;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

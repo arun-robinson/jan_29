@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
-
+@Transactional
 @RestController
 @RequestMapping("/api/v1/stock")
 public class StockController {
@@ -73,10 +75,11 @@ public class StockController {
  
 	 }
 
+	  
 	 
     // Get product by ID
-	@GetMapping("/{id}")
-	public ResponseEntity<Stock> getUserByID(@PathVariable("id") Long id) {
+	@GetMapping("/base/{id}")
+	public ResponseEntity<Stock> getStockByID(@PathVariable("id") Integer id) {
 
 		Optional<Stock> stkdata = stockRepository.findById(id);
 		if (stkdata.isPresent()) {
@@ -86,6 +89,38 @@ public class StockController {
 		}
 
 	}
+	 
+
+ 
+	// Get product by ID
+	@GetMapping("/key/{product_key}")
+	public ResponseEntity<Stock> getStockByKey(@PathVariable("product_key") String product_key) {
+
+		Stock stkdata = stockRepository.get_stock_by_id(product_key);
+		//stockRepository.
+		if (stkdata!=null) {
+			return new ResponseEntity<>(stkdata, HttpStatus.OK);
+		} else {
+			throw new UserNotFound("Invalid product key");
+		}
+
+	}
+
+	// Get product by ID
+	@GetMapping("/update/{product_key}/{number_of_cartons_received}")
+	public ResponseEntity<Integer> updateStockByKey(@PathVariable("product_key") String product_key,
+	@PathVariable("number_of_cartons_received") int number_of_cartons_received) {
+
+		Integer stkdata = stockRepository.update_stock_count(product_key,number_of_cartons_received);
+		//stockRepository.
+		if (stkdata!=null) {
+			return new ResponseEntity<Integer>(1, HttpStatus.OK);
+		} else {
+			throw new UserNotFound("Invalid product key");
+		}
+
+	}
+	 
 
     
 }
